@@ -1,11 +1,18 @@
 {
-	"compilerOptions": {
-		"outDir": "./dist",
-		"target": "ESNext",
-		"moduleResolution": "node",
-		"declaration": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true
-	},
-	"exclude": ["dist", "node_modules"]
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "target": "es2021",
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "module": "es2022",
+  },
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
