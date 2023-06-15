@@ -12,6 +12,7 @@ This package only works with Vercel edge functions. Vercel edge functions are se
 ## Getting Started!
 
 ### Install the package
+
 ```bash
 npm install vercel-email
 ```
@@ -20,15 +21,16 @@ npm install vercel-email
 
 ```typescript
 import { NextRequest, NextResponse } from 'next/server';
- 
+
 export const config = {
-  runtime: 'edge', // this is a pre-requisite
+	runtime: 'edge', // this is a pre-requisite
 };
 ```
 
 ### Import the package
+
 ```typescript
-import Email from 'vercel-email'
+import Email from 'vercel-email';
 ```
 
 ## Setup SPF
@@ -51,11 +53,11 @@ The Most basic request would look like this:
 
 ```typescript
 await Email.send({
-  to: "john@example.com",
-  from: "me@example.com",
-  subject: "Hello World",
-  text: "Hello World"
-})
+	to: 'john@example.com',
+	from: 'me@example.com',
+	subject: 'Hello World',
+	text: 'Hello World',
+});
 ```
 
 ### HTML Emails
@@ -64,11 +66,11 @@ You can also send HTML emails by adding an `html` parameter to the request. This
 
 ```typescript
 await Email.send({
-  to: "john@example.com",
-  from: "me@example.com",
-  subject: "Hello World",
-  html: "<h1>Hello World</h1>"
-})
+	to: 'john@example.com',
+	from: 'me@example.com',
+	subject: 'Hello World',
+	html: '<h1>Hello World</h1>',
+});
 ```
 
 ### Sender and Recipient Name
@@ -77,11 +79,11 @@ You can also specify a sender and recipient name by adding a `name` parameter to
 
 ```typescript
 await Email.send({
-  to: { "email": "john@example.com",  "name": "John Doe" },
-  from: { "email": "me@example.com", "name": "Jane Doe" },
-  subject: "Hello World",
-  text: "Hello World"
-})
+	to: { email: 'john@example.com', name: 'John Doe' },
+	from: { email: 'me@example.com', name: 'Jane Doe' },
+	subject: 'Hello World',
+	text: 'Hello World',
+});
 ```
 
 ### Sending to Multiple Recipients
@@ -90,28 +92,25 @@ You may also send to multiple recipients by passing an array of eamils, or an ar
 
 ```typescript
 await Email.send({
-  "to": [
-    "john@example.com",
-    "rose@example.com"
-  ],
-  "from": "me@example.com",
-  "subject": "Hello World",
-  "text": "Hello World"
-})
+	to: ['john@example.com', 'rose@example.com'],
+	from: 'me@example.com',
+	subject: 'Hello World',
+	text: 'Hello World',
+});
 ```
 
 or
 
 ```typescript
 await Email.send({
-  "to": [
-    { "email": "john@example.com", "name": "John Doe" },
-    { "email": "rose@example.com", "name": "Rose Doe" }
-  ],
-  "from": "me@example.com",
-  "subject": "Hello World",
-  "text": "Hello World"
-})
+	to: [
+		{ email: 'john@example.com', name: 'John Doe' },
+		{ email: 'rose@example.com', name: 'Rose Doe' },
+	],
+	from: 'me@example.com',
+	subject: 'Hello World',
+	text: 'Hello World',
+});
 ```
 
 ### Sending BCC and CC
@@ -120,18 +119,13 @@ You can also send BCC and CC emails by passing an array of eamils, an object wit
 
 ```typescript
 await Email.send({
-  "to": "john@example.com",
-  "from": "me@example.com",
-  "subject": "Hello World",
-  "text": "Hello World",
-  "cc": [
-    "jim@example.com",
-    "rose@example.com"
-  ],
-  "bcc": [
-    "gil@example.com"
-  ]
-})
+	to: 'john@example.com',
+	from: 'me@example.com',
+	subject: 'Hello World',
+	text: 'Hello World',
+	cc: ['jim@example.com', 'rose@example.com'],
+	bcc: ['gil@example.com'],
+});
 ```
 
 ### Reply To
@@ -140,10 +134,10 @@ You can also specify a reply to email address by adding a `replyTo` parameter to
 
 ```typescript
 await Email.send({
-  "to": "john@example.com",
-  "from": "me@example.com",
-  "replyTo": "support@example.com",
-  "subject": "Hello World",
-  "text": "Hello World"
-})
+	to: 'john@example.com',
+	from: 'me@example.com',
+	replyTo: 'support@example.com',
+	subject: 'Hello World',
+	text: 'Hello World',
+});
 ```
