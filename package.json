@@ -1,0 +1,34 @@
+{
+  "name": "vercel-email",
+  "version": "0.0.2",
+  "description": "A simple free transactional email package built for Vercel Edge functions",
+  "author": "Shayan",
+  "license": "MIT",
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsup": "^6.7.0",
+    "typescript": "^5.1.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "tsup": {
+    "dts": true,
+    "bundle": false,
+    "treeshake": true,
+    "target": "node16",
+    "format": ["esm", "cjs"],
+    "entry": ["src/main.ts"]
+  }
+}
