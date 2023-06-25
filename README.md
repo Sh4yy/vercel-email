@@ -143,3 +143,16 @@ await Email.send({
   text: 'Hello World',
 });
 ```
+
+### Custom From
+You can also customize the from property to use a more friendly name instead of sending the full email, it's way better.
+
+```typescript
+await Email.send({
+  to: 'john@example.com',
+  from: 'me@example.com (My Name)',
+  replyTo: 'support@example.com',
+  subject: 'Hello World',
+  text: 'Hello World',
+});
+```
